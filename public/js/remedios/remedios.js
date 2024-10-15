@@ -118,7 +118,7 @@ class Remedios {
                     </div>        
                 </div>
             </div>
-            <div class="button" style="margin-top: 20px;">
+            <div class="button">
                 <a class="waves-effect waves-light btn">Ver mas</a>
             </div>
         </article>`

@@ -274,11 +274,9 @@ label
   height: 300px;
 }
 .posts .post .post-descripcion {
-  text-align: center;
   background: #eee;
   font-family: 'Allerta', sans-serif;
   padding: 0.5em;
-  font-size: 17px;
 }
 .posts .post .post-videolink {
   text-align: center;
@@ -467,4 +465,10 @@ label
   .modal-registro {
     width: 70% !important;
   }
+
+  .button {
+    text-align: center;
+    margin-top: 5px; 
+    margin-bottom: 5px;;
+}
 }

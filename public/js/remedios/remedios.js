@@ -106,7 +106,7 @@ class Remedios {
                     alt="Imagen Video">     
             </div>
             <div class="post-descripcion">
-                <p>${descripcion}</p>
+                ${descripcion}
             </div>
             <div class="post-footer container">
                 <div class="row">
@@ -118,7 +118,7 @@ class Remedios {
                     </div>        
                 </div>
             </div>
-            <div class="button">
+            <div class="button" style="margin-top: 20px;">
                 <a class="waves-effect waves-light btn">Ver mas</a>
             </div>
         </article>`

@@ -7,7 +7,7 @@ $(() => {
   // Init Firebase nuevamente
   //const app = initializeApp(firebaseConfig);
 
- //const analytics = getAnalytics(app);
+  //const analytics = getAnalytics(app);
 
   firebase.initializeApp(firebaseConfig);
 
@@ -26,24 +26,25 @@ $(() => {
   remedio.consultarTodosPost()
 
   // TODO: Firebase observador del cambio de estado
- 
+
   firebase.auth().onAuthStateChanged(user => {
 
 
-    if(user){
+    if (user) {
       $('#btnInicioSesion').text('Salir')
-      if(user.photoURL){
+      if (user.photoURL) {
         $('#avatar').attr('src', user.photoURL)
-      }else{
+      } else {
         $('#avatar').attr('src', 'imagenes/usuario_auth.png')
-      }}
-    else{
+      }
+    }
+    else {
       $('#btnInicioSesion').text('Iniciar Sesion')
       $('#avatar').attr('src', 'imagenes/usuario.png')
     }
-    })
- 
- 
+  })
+
+
   //$('#btnInicioSesion').text('Salir')
   //$('#avatar').attr('src', user.photoURL)
   //$('#avatar').attr('src', 'imagenes/usuario_auth.png')
@@ -54,20 +55,20 @@ $(() => {
   $('#btnInicioSesion').click(() => {
     //$('#avatar').attr('src', 'imagenes/usuario.png')
     // Materialize.toast(`Error al realizar SignOut => ${error}`, 4000)
-    
+
 
     const user = firebase.auth().currentUser
     if (user) {
       $('#btnInicioSesion').text('Iniciar Sesion')
-      
+
       firebase.auth().signOut()
-      .then( () =>{
-        $('#avatar').attr('src', 'imagenes/usuario.png')
-        Materialize.toast(`SignOut correcto`, 5000)
-      }).catch( error => {
-        Materialize.toast(`Error al realizar SignOut => ${error}`, 5000)
-      })
-    } 
+        .then(() => {
+          $('#avatar').attr('src', 'imagenes/usuario.png')
+          Materialize.toast(`SignOut correcto`, 5000)
+        }).catch(error => {
+          Materialize.toast(`Error al realizar SignOut => ${error}`, 5000)
+        })
+    }
 
     $('#emailSesion').val('')
     $('#passwordSesion').val('')
@@ -77,12 +78,12 @@ $(() => {
   $('#avatar').click(() => {
 
     firebase.auth().signOut()
-    .then( () =>{
-      $('#avatar').attr('src', 'imagenes/usuario.png')
-      Materialize.toast(`SignOut correcto`, 4000)
-    }).catch( error => {
-      Materialize.toast(`Error al realizar SignOut => ${error}`, 4000)
-    })
+      .then(() => {
+        $('#avatar').attr('src', 'imagenes/usuario.png')
+        Materialize.toast(`SignOut correcto`, 4000)
+      }).catch(error => {
+        Materialize.toast(`Error al realizar SignOut => ${error}`, 4000)
+      })
 
 
     //$('#avatar').attr('src', 'imagenes/usuario.png')
@@ -90,13 +91,21 @@ $(() => {
   })
 
   $('#btnTodoPost').click(() => {
-    $('#tituloPost').text('Posts de la Comunidad') 
+    $('#tituloPost').text('Posts de la Comunidad')
     const remedios = new Remedios()
-    remedios.consultarTodosPost()  
+    remedios.consultarTodosPost()
   })
 
   $('#btnMisPost').click(() => {
     //$('#tituloPost').text('Mis Posts')
     //Materialize.toast(`Debes estar autenticado para ver tus posts`, 4000)    
   })
+
+  $(document).on('click', '.buttonmas', function () {
+    const id = $(this).data('id');
+    $('#tituloPost').text('Detalles del remedio');
+    const remedios = new Remedios();
+    remedios.consultarVerMasRemedio(id);
+  });
+
 })

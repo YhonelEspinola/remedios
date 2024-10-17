@@ -42,10 +42,12 @@
   font-style: normal;
 }
 .btnPpal {
-  background: #7acc2d !important;
+  background: #ded827 !important;
+  color: black;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   transition: 0.5s;
+  border-radius: 10px;
 }
 .btnPpal:hover {
   background: #7acc2d;
@@ -56,21 +58,21 @@ body {
   font-family: 'Allerta', sans-serif;
 }
 .headerppal {
-  background: #126798;
+  background: #129f2a;
   overflow: hidden;
   box-shadow: 0 8px 10px rgba(0,0,0,0.5);
   padding-bottom: 30px;
   text-align: center;
 }
 .headerppal .titulo {
-  color: #fff;
+  color: #000;
   font-size: 40px;
   font-family: 'Montserrat', sans-serif;
   margin-top: 30px;
   margin-bottom: 0;
 }
 .headerppal .titulo-a {
-  color: #fff;
+  color: #000;
   font-size: 20px;
   padding-top: 5px;
   padding-bottom: 15px;
@@ -107,7 +109,7 @@ body {
   transform: translateY(100px);
 }
 .menu {
-  background: #219cca;
+  background: #21ca78;
   border-left: 10px solid #fff;
   box-shadow: 0 8px 10px rgba(0,0,0,0.5);
 }
@@ -120,7 +122,7 @@ body {
   transition: 0.6s;
 }
 .menu ul li:hover {
-  background: #126798;
+  background: #0d8864;
 }
 .menu ul li a {
   color: #fff;
@@ -293,7 +295,7 @@ label
   text-decoration: underline;
 }
 .posts .post .post-footer {
-  background: #126798;
+  background: #21ca78;
   color: #fff;
   font-size: 17px;
   padding-bottom: 0.5em;
@@ -310,7 +312,7 @@ label
   width: 100%;
 }
 .registro-bienvenida h4 {
-  color: #126798;
+  color: #33aa15;
   font-size: 1.5em;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -327,13 +329,13 @@ label
   font-weight: bold;
 }
 .registro-formulario {
-  border-left: 0.3em solid #126798;
+  border-left: 0.3em solid #33aa15;
 }
 .registro-formulario div {
   margin: 0;
 }
 .registro-formulario label {
-  color: #126798;
+  color: #33aa15;
   font-size: 1em;
 }
 .registro-formulario a {
@@ -345,10 +347,11 @@ label
   text-align: center;
 }
 .registro-formulario .div-btnInicioSesion a {
-  background: #126798 !important;
+  background: #33aa15 !important;
+  border-radius: 10px;
 }
 .registro-formulario .lbl-ingresar-redes {
-  color: #126798;
+  color: #000;
   font-weight: bold;
   padding-top: 1em;
   text-align: center;
@@ -358,7 +361,7 @@ label
   text-align: center;
 }
 .registro-formulario .registro-iconos-redes .logo-facebook:before {
-  color: #7acc2d;
+  color: #33aa15;
   content: "\f101";
   font-size: 40px;
   font-family: "Flaticon";
@@ -367,7 +370,7 @@ label
   margin-left: 1em;
 }
 .registro-formulario .registro-iconos-redes .logo-google:before {
-  color: #7acc2d;
+  color: #33aa15;
   content: "\f2b3";
   font-size: 45px;
   font-family: "googleicon";
@@ -376,7 +379,7 @@ label
   margin-left: 1em;
 }
 .registro-formulario .registro-iconos-redes .logo-twitter:before {
-  color: #7acc2d;
+  color: #33aa15;
   content: "\f102";
   font-size: 40px;
   font-family: "Flaticon";
@@ -387,10 +390,11 @@ label
   margin-bottom: 0em;
 }
 .div-btnRegistrarse a {
-  background: #126798 !important;
+  background: #33aa15 !important;
+  border-radius: 10px;
 }
 .titulo-posts {
-  color: #126798;
+  color: #000;
   font-weight: bold;
   text-align: center;
 }
@@ -470,6 +474,6 @@ label
   .button {
     text-align: center;
     margin-top: 5px; 
-    margin-bottom: 5px;;
+    margin-bottom: 5px;
 }
 }

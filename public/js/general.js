@@ -35,12 +35,12 @@ $(() => {
       if (user.photoURL) {
         $('#avatar').attr('src', user.photoURL)
       } else {
-        $('#avatar').attr('src', 'imagenes/usuario_auth.png')
+        $('#avatar').attr('src', 'imagenes/user_auth.png')
       }
     }
     else {
       $('#btnInicioSesion').text('Iniciar Sesion')
-      $('#avatar').attr('src', 'imagenes/usuario.png')
+      $('#avatar').attr('src', 'imagenes/user.png')
     }
   })
 
@@ -63,7 +63,7 @@ $(() => {
 
       firebase.auth().signOut()
         .then(() => {
-          $('#avatar').attr('src', 'imagenes/usuario.png')
+          $('#avatar').attr('src', 'imagenes/user.png')
           Materialize.toast(`SignOut correcto`, 5000)
         }).catch(error => {
           Materialize.toast(`Error al realizar SignOut => ${error}`, 5000)
@@ -79,7 +79,7 @@ $(() => {
 
     firebase.auth().signOut()
       .then(() => {
-        $('#avatar').attr('src', 'imagenes/usuario.png')
+        $('#avatar').attr('src', 'imagenes/user.png')
         Materialize.toast(`SignOut correcto`, 4000)
       }).catch(error => {
         Materialize.toast(`Error al realizar SignOut => ${error}`, 4000)

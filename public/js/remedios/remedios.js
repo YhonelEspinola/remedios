@@ -164,36 +164,24 @@ class Remedios {
     obtenerVerMasRemedioTemplate = (id, autor, titulo, descripcion, ingredientes, preparacion, imagenLink, fecha) => {
 
         const postHtml = `
-            <div class="container my-5 p-4 shadow-sm rounded border">
-                
-                
-                <h2 class="text-center text-danger font-weight-bold"><b>${titulo}</b></h2>
-                
-               
+            <div class="container my-5 p-4 z-depth-1 rounded">
+                <h2 class="center-align red-text text-darken-2"><b>${titulo}</b></h2>
                 ${imagenLink ? `
-                    <div class="text-center my-4">
-                        <img src='${imagenLink}' class="img-fluid rounded shadow" alt="Imagen del Remedio">
+                    <div class="center-align my-4">
+                        <img src='${imagenLink}' class="responsive-img z-depth-2 rounded" alt="Imagen del Remedio">
                     </div>` : ''}
-        
-                
                 <div class="remedio-contenido">
-                    <h4 class="text-danger mt-4"><b>Descripción</b></h4>
-                    <p class="text-justify ">${descripcion}</p>
-                    
-                   
-                    <h4 class="text-danger mt-4"><b>Ingredientes</b></h4>
-                <ul class="list-unstyled ml-3" style="line-height: 1.6; padding-left: 20px;">
-                    ${ingredientes.split(',').map(ingrediente => `<li class="mb-1" style="list-style-type: disc;">${ingrediente.trim()}</li>`).join('')}
-                </ul>
-                    
-                    
-                    <h4 class="text-danger mt-4"><b>Preparación</b></h4>
-                    <p class="text-justify ">${preparacion}</p>
+                    <h4 class="red-text text-darken-2 mt-4"><b>Descripción</b></h4>
+                    <p>${descripcion}</p>
+                    <h4 class="red-text text-darken-2 mt-4"><b>Ingredientes</b></h4>
+                    <ul class="browser-default" style="line-height: 1.6; padding-left: 20px;">
+                        ${ingredientes.split(',').map(ingrediente => `<li class="mb-1" style="list-style-type: disc;">${ingrediente.trim()}</li>`).join('')}
+                    </ul>
+                    <h4 class="red-text text-darken-2 mt-4"><b>Preparación</b></h4>
+                    <p>${preparacion}</p>
                 </div>
-        
-                <!-- Autor y fecha -->
-                <div class="bg-danger text-white p-3 mt-4 rounded">
-                    <p class="text-center m-0">Por <strong>${autor}</strong> | Publicado el ${fecha}</p>
+                <div class="red darken-2 white-text p-3 mt-4 rounded">
+                    <p class="center-align m-0">Por <strong>${autor}</strong> | Publicado el ${fecha}</p>
                 </div>
             </div>`;
 

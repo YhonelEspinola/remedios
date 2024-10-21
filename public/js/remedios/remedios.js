@@ -57,13 +57,12 @@ class Remedios {
 
 
     consultarPostxUsuario(emailUser) {
-
         this.db.collection('remedios')
             .where('autor', '==', emailUser)
             .onSnapshot(querySnapshot => {
-                $('#posts').empty()
+                $('#posts').empty();
                 if (querySnapshot.empty) {
-                    $('#posts').append(this.obtenerTemplatePostVacio())
+                    $('#posts').append(this.obtenerTemplatePostVacio());
                 } else {
                     querySnapshot.forEach(post => {
                         let postHtml = this.obtenerPostTemplate(
@@ -73,12 +72,11 @@ class Remedios {
                             post.data().descripcion,
                             post.data().imagenLink,
                             Utilidad.obtenerFecha(post.data().fecha.toDate())
-                        )
-                        $('#posts').append(postHtml)
-
-                    })
+                        );
+                        $('#posts').append(postHtml);
+                    });
                 }
-            })
+            });
     }
 
     subirImagenRemedio(file, uid) {

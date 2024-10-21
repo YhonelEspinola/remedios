@@ -91,25 +91,23 @@ $(() => {
   })
 
   $('#btnTodoPost').click(() => {
-    $('#tituloPost').text('Posts de la Comunidad')
+    $('#tituloPost').text('Remedios de la Comunidad')
     const remedios = new Remedios()
     remedios.consultarTodosPost()
   })
 
+
   $('#btnMisPost').click(() => {
-    //$('#tituloPost').text('Mis Posts')
-    //Materialize.toast(`Debes estar autenticado para ver tus posts`, 4000)    
-    const user = firebase.auth().currentUser
+    const user = firebase.auth().currentUser;
     if (user) {
-
-      const remedios = new Remedios()
-      remedios.consultarPostxUsuario(user.email)
-      $('#tituloPost').text('Mis Posts')
+      window.location.href = 'indextwo.html';
+      $('#tituloPost').text('Mis remedios');
+      const remedio = new RemediosTwo();
+      remedio.consultarPostxUsuario(user.email);
     } else {
-      Materialize.toast(`Debes estar autenticado para ver tus posts`, 4000)
+      Materialize.toast('Debes estar autenticado para ver tus remedios', 4000);
     }
-
-  })
+  });
 
   $(document).on('click', '.buttonmas', function () {
     const id = $(this).data('id');

@@ -47,7 +47,7 @@ $(() => {
     });
 
     $('#btnTodoPost').click(() => {
-        $('#tituloPost').text('Posts de la Comunidad');
+        $('#tituloPost').text('Remedios de la Comunidad');
         const remedio = new RemediosTwo();
         remedio.consultarTodosPost();
     });
@@ -57,9 +57,9 @@ $(() => {
         if (user) {
             const remedio = new RemediosTwo();
             remedio.consultarPostxUsuario(user.email);
-            $('#tituloPost').text('Mis Posts');
+            $('#tituloPost').text('Mis Remedios');
         } else {
-            Materialize.toast('Debes estar autenticado para ver tus posts', 4000);
+            Materialize.toast('Debes estar autenticado para ver tus remedios', 4000);
         }
     });
 

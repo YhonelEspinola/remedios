@@ -146,7 +146,7 @@ class Remedios {
             <article class="post">
                 <div class="post-titulo"><h5>${titulo}</h5></div>
                 ${imagenLink ? `<div class="post-video"><img id="imgVideo" src='${imagenLink}' class="post-imagen-video" alt="Imagen Video"></div>` : ''}
-                <div class="post-descripcion"><p>${Descripcion}</p></div>
+                <div class="post-descripcion"><p style="white-space: pre-wrap;">${Descripcion}</p></div>
                 <div class="post-footer container">
                     <div class="row">
                         <div class="col m6">Fecha: ${fecha}</div>
@@ -217,13 +217,13 @@ class Remedios {
                     </div>` : ''}
                 <div class="remedio-contenido">
                     <h4 class="red-text text-darken-2 mt-4"><b>Descripción</b></h4>
-                    <p>${descripcion}</p>
+                    <p style="white-space: pre-wrap;">${descripcion}</p>
                     <h4 class="red-text text-darken-2 mt-4"><b>Ingredientes</b></h4>
                     <ul class="browser-default" style="line-height: 1.6; padding-left: 20px;">
-                        ${ingredientes.split(',').map(ingrediente => `<li class="mb-1" style="list-style-type: disc;">${ingrediente.trim()}</li>`).join('')}
+                        ${ingredientes.split(',').map(ingrediente => `<li class="mb-1" style="list-style-type: disc; white-space: pre-wrap;">${ingrediente.trim()}</li>`).join('')}
                     </ul>
                     <h4 class="red-text text-darken-2 mt-4"><b>Preparación</b></h4>
-                    <p>${preparacion}</p>
+                    <p style="white-space: pre-wrap;">${preparacion}</p>
                 </div>
                 <div class="red darken-2 white-text p-3 mt-4 rounded">
                     <p class="center-align m-0">Por <strong>${autor}</strong> | Publicado el ${fecha}</p>

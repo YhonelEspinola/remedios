@@ -232,7 +232,7 @@ class RemediosTwo {
         this.db.collection('remedios').doc(id).delete()
             .then(() => {
                 Materialize.toast('Remedio eliminado correctamente', 5000);
-                this.consultarTodosPost();
+                this.consultarPostxUsuario = true;
             })
             .catch(error => {
                 Materialize.toast(`Error al eliminar el remedio: ${error.message}`, 5000);

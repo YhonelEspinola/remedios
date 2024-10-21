@@ -22,7 +22,7 @@ $(() => {
 
     const user = firebase.auth().currentUser
 
-    if(user == null){
+    if (user == null) {
       Materialize.toast(`Para crear un remedio debes estar autenticado`, 5000)
       return
     }
@@ -63,7 +63,12 @@ $(() => {
 
     const file = e.target.files[0]
 
+    const user = firebase.auth().currentUser
+
+    const remedios = new Remedios()
+    remedios.subirImagenRemedio(file, user.uid)
+
     // TODO: Referencia al storage
-    
+
   })
 })

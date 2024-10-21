@@ -58,6 +58,51 @@ class Remedios {
 
     consultarPostxUsuario(emailUser) {
 
+        this.db.collection('remedios')
+            .where('autor', '==', emailUser)
+            .onSnapshot(querySnapshot => {
+                $('#posts').empty()
+                if (querySnapshot.empty) {
+                    $('#posts').append(this.obtenerTemplatePostVacio())
+                } else {
+                    querySnapshot.forEach(post => {
+                        let postHtml = this.obtenerPostTemplate(
+                            post.id,
+                            post.data().autor,
+                            post.data().titulo,
+                            post.data().descripcion,
+                            post.data().imagenLink,
+                            Utilidad.obtenerFecha(post.data().fecha.toDate())
+                        )
+                        $('#posts').append(postHtml)
+
+                    })
+                }
+            })
+    }
+
+    subirImagenRemedio(file, uid) {
+
+        const refStorage = firebase.storage().ref(`remedios/${uid}/${file.name}`)
+        const task = refStorage.put(file)
+
+        task.on('state_changed',
+            snapshot => {
+                const porcentaje = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                $('.determinate').attr('style', `width :${porcentaje}% `)
+            },
+            err => {
+                console.error(`Error subiendo archivo => ${err}`)
+            },
+            () => {
+                task.snapshot.ref.getDownloadURL()
+                    .then(url => {
+                        console.log(`URL del archivo => ${url}`)
+                        sessionStorage.setItem('imgNewPost', url)
+                    })
+            }
+        )
+
     }
 
     obtenerTemplatePostVacio() {

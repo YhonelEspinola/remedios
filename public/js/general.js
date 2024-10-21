@@ -99,6 +99,16 @@ $(() => {
   $('#btnMisPost').click(() => {
     //$('#tituloPost').text('Mis Posts')
     //Materialize.toast(`Debes estar autenticado para ver tus posts`, 4000)    
+    const user = firebase.auth().currentUser
+    if (user) {
+
+      const remedios = new Remedios()
+      remedios.consultarPostxUsuario(user.email)
+      $('#tituloPost').text('Mis Posts')
+    } else {
+      Materialize.toast(`Debes estar autenticado para ver tus posts`, 4000)
+    }
+
   })
 
   $(document).on('click', '.buttonmas', function () {

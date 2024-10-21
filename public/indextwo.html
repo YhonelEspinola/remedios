@@ -31,8 +31,8 @@
     <nav class="menu">
         <ul>
             <li><a id="btnTodoPost" href="index.html">Todos los remedios</a></li>
-            <li><a href="indextwo.html">Mi perfil</a></li>
-            <li><a id="btnMisPost" href="indextwo.html">Mis Remedios</a></li>
+            <li><a id="btnMisPost">Mi perfil</a></li>
+            <!--<li><a id="btnMisPost" >Mis Remedios</a></li>-->
             <li><a id="btnModalPost" >Crea un remedio</a></li>
             
         </ul>
@@ -164,6 +164,46 @@
             </div>
         </div>
     </div>
+
+    <div id="modalEditPost" class="modal">
+        <div class="modal-content">
+            <h4 class="center-align">Editar Remedio</h4>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="tituloEditPost" type="text" class="validate">
+                    <label for="tituloEditPost" class="active">Título</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea id="descripcionEditPost" class="materialize-textarea validate"></textarea>
+                    <label for="descripcionEditPost" class="active">Descripción</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea id="ingredientesEditRemedios" class="materialize-textarea validate"></textarea>
+                    <label for="ingredientesEditRemedios" class="active">Ingredientes</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea id="preparacionEditRemedios" class="materialize-textarea validate"></textarea>
+                    <label for="preparacionEditRemedios" class="active">Preparación</label>
+                </div>
+                <div class="file-field input-field col s12">
+                    <div class="btn">
+                        <span>Imagen</span>
+                        <input type="file" id="imagenEditRemedio">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Sube una imagen">
+                    </div>
+                </div>
+                <div class="col s12 center-align">
+                    <img id="imagenPreview" src="" alt="Vista previa de la imagen" class="responsive-img z-depth-2" style="max-height: 200px; margin-top: 20px;">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-red btn-flat">Cancelar</a>
+            <a id="btnSaveEditPost" href="#!" class="waves-effect waves-green btn-flat">Guardar</a>
+        </div>
+    </div>
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -182,17 +222,17 @@
 
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
  
- 
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
 
 
 <!--build:js js/main.min.js -->
 <script type="text/javascript" src="js/config/ConfigFirebase.js"></script> 
 <script type="text/javascript" src="js/util/util.js"></script>
-<script type="text/javascript" src="js/remedios/remedios.js"></script>
-<script type="text/javascript" src="js/general.js"></script>
+<script type="text/javascript" src="js/remedios/remediostwo.js"></script>
+<script type="text/javascript" src="js/generaltwo.js"></script>
 <script type="text/javascript" src="js/auth/autenticacion.js"></script>
 <script type="text/javascript" src="js/auth/authController.js"></script>
-<script type="text/javascript" src="js/remedios/remediosController.js"></script>
+<script type="text/javascript" src="js/remedios/remediosControllertwo.js"></script>
 
 
 <!-- endbuild -->
